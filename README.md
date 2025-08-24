@@ -1,26 +1,26 @@
-# Полная шпаргалка по CSS
+# Повна шпаргалка CSS
 
-## Основы CSS
+## Основи CSS
 
 ### Синтаксис CSS
 
-CSS-правило состоит из селектора и блока объявлений:
+CSS-правило складається з селектора та блоку оголошень:
 
 ```css
 селектор {
-  свойство: значение;
-  свойство: значение;
+ властивість: значення; 
+ властивість: значення;
 }
 ```
 
-### Способы подключения CSS
+### Способи підключення CSS
 
-1. **Встроенные стили** (Inline CSS):
+1. **Внутрішні стилі** (Internal CSS):
 ```html
 <p style="color: red; font-size: 20px;">Текст с красным цветом</p>
 ```
 
-2. **Внутренние стили** (Internal CSS):
+2. **Зовнішні стилі** (Internal CSS):
 ```html
 <head>
   <style>
@@ -39,32 +39,32 @@ CSS-правило состоит из селектора и блока объя
 </head>
 ```
 
-## Селекторы CSS
+## Селектори CSS
 
-### Основные типы селекторов
+### Основні типи селекторів
 
-1. **Селектор элемента**:
+1. **Селектор елемента**:
 ```css
 p {
   color: blue;
 }
 ```
 
-2. **Селектор класса**:
+2. **Селектор класу**:
 ```css
 .my-class {
   color: green;
 }
 ```
 
-3. **Селектор идентификатора**:
+3. **Селектор ідентифікатора**:
 ```css
 #my-id {
   color: red;
 }
 ```
 
-4. **Универсальный селектор**:
+4. **Універсальний селектор**:
 ```css
 * {
   margin: 0;
@@ -72,594 +72,594 @@ p {
 }
 ```
 
-### Комбинаторы
+### Комбінатори
 
-1. **Потомки** (пробел):
+1. **Нащадки** (пробел):
 ```css
 div p {
-  color: red; /* Все параграфы внутри div */
+  color: red; /* Усі параграфи всередині div */
 }
 ```
 
-2. **Дочерние элементы** (>):
+2. **Дочірні елементи** (>):
 ```css
 div > p {
-  color: blue; /* Только прямые дочерние параграфы div */
+  color: blue; /* Тільки прямі дочірні параграфи div */
 }
 ```
 
-3. **Смежные элементы** (+):
+3. **Сусідній** (+):
 ```css
 h1 + p {
-  color: green; /* Параграф, следующий сразу за h1 */
+  color: green; /* Параграф, наступний відразу за h1 */
 }
 ```
 
-4. **Родственные элементы** (~):
+4. **Загальні** (~):
 ```css
 h1 ~ p {
-  color: purple; /* Все параграфы после h1 на том же уровне */
+  color: purple; /* Усі параграфи після h1 на тому ж рівні */
 }
 ```
 
-### Псевдоклассы
+### Псевдокласи
 
 ```css
 a:hover {
-  color: red; /* Цвет ссылки при наведении */
+  color: red; /* Колір посилання при наведенні */
 }
 
 p:first-child {
-  font-weight: bold; /* Первый дочерний элемент p */
+  font-weight: bold; /* Перший дочірній елемент p */
 }
 
 input:focus {
-  border: 2px solid blue; /* Стиль при фокусе на поле ввода */
+  border: 2px solid blue; /* Стиль при фокусі на полі введення */
 }
 ```
 
-### Псевдоэлементы
+### Псевдоелементи
 
 ```css
 p::first-line {
-  font-weight: bold; /* Первая строка параграфа */
+  font-weight: bold; /* Перший рядок параграфа */
 }
 
 p::before {
-  content: "»"; /* Добавляет контент перед каждым параграфом */
+  content: "»"; /* Додає контент перед кожним параграфом */
 }
 
 p::after {
-  content: "«"; /* Добавляет контент после каждого параграфа */
+  content: "«"; /* Додає контент після кожного параграфа */
 }
 ```
 
-## Цвета и фоны
+## Кольори та фони
 
-### Цвета
+### Кольори
 
 ```css
 p {
-  color: red; /* Именованный цвет */
-  color: #ff0000; /* Шестнадцатеричный код */
+  color: red; /* Іменований колір */
+  color: #ff0000; /* Шістнадцятковий код */
   color: rgb(255, 0, 0); /* RGB */
-  color: rgba(255, 0, 0, 0.5); /* RGBA (с прозрачностью) */
+  color: rgba(255, 0, 0, 0.5); /* RGBA (з прозорістю) */
   color: hsl(0, 100%, 50%); /* HSL */
-  color: hsla(0, 100%, 50%, 0.5); /* HSLA (с прозрачностью) */
+  color: hsla(0, 100%, 50%, 0.5); /* HSLA (з прозорістю) */
 }
 ```
 
-### Фоны
+### Фони
 
 ```css
 div {
-  background-color: lightblue; /* Цвет фона */
-  background-image: url('image.jpg'); /* Фоновое изображение */
-  background-repeat: no-repeat; /* Повторение фона */
-  background-position: center; /* Позиция фона */
-  background-size: cover; /* Размер фона */
-  background-attachment: fixed; /* Фиксированный фон */
+  background-color: lightblue; /* Колір фона */
+  background-image: url('image.jpg'); /* Фонове зображення */
+  background-repeat: no-repeat; /* Повторення фону */
+  background-position: center; /* Позиція фона */
+  background-size: cover; /* Розмір фону */
+  background-attachment: fixed; /* Фіксований фон */
   
-  /* Сокращенная запись */
+  /* Скорочений запис */
   background: lightblue url('image.jpg') no-repeat center/cover fixed;
 }
 ```
 
-## Текст и шрифты
+## Текст та шрифти
 
-### Свойства текста
+### Властивості тексту
 
 ```css
-p {
-  color: #333; /* Цвет текста */
-  text-align: center; /* Выравнивание текста */
-  text-decoration: underline; /* Оформление текста */
-  text-transform: uppercase; /* Трансформация текста */
-  text-indent: 20px; /* Отступ первой строки */
-  line-height: 1.5; /* Высота строки */
-  letter-spacing: 2px; /* Расстояние между буквами */
-  word-spacing: 5px; /* Расстояние между словами */
-  white-space: nowrap; /* Обработка пробелов */
-  text-shadow: 2px 2px 4px #000; /* Тень текста */
+p { 
+color: #333; /* Колір тексту */ 
+text-align: center; /* Вирівнювання тексту */ 
+text-decoration: underline; /* Оформлення тексту */ 
+text-transform: uppercase; /* Трансформація тексту */ 
+text-indent: 20px; /* Відступ першого рядка */ 
+line-height: 1.5; /* Висота рядка */ 
+letter-spacing: 2px; /* Відстань між літерами */ 
+word-spacing: 5px; /* Відстань між словами */ 
+white-space: nowrap; /* Обробка пробілів */ 
+text-shadow: 2px 2px 4px #000; /* Тінь тексту */
 }
 ```
 
-### Шрифты
+### Шрифти
 
 ```css
-body {
-  font-family: 'Arial', sans-serif; /* Семейство шрифтов */
-  font-size: 16px; /* Размер шрифта */
-  font-weight: bold; /* Жирность шрифта */
-  font-style: italic; /* Стиль шрифта */
-  font-variant: small-caps; /* Вариант шрифта */
-  
-  /* Сокращенная запись */
-  font: italic bold 16px/1.5 'Arial', sans-serif;
+body { 
+font-family: 'Arial', sans-serif; /* Сімейство шрифтів */ 
+font-size: 16px; /* Розмір шрифту */ 
+font-weight: bold; /* Жирність шрифту */ 
+font-style: italic; /* Стиль шрифту */ 
+font-variant: small-caps; /* Варіант шрифту */ 
+
+/* Скорочений запис */ 
+font: italic bold 16px/1.5 'Arial', sans-serif;
 }
 ```
 
-### Подключение веб-шрифтов
+### Підключення веб-шрифтів
 
 ```css
-@font-face {
-  font-family: 'MyFont';
-  src: url('myfont.woff2') format('woff2'),
-       url('myfont.woff') format('woff');
+@font-face { 
+font-family: 'MyFont'; 
+src: url('myfont.woff2') format('woff2'), 
+url('myfont.woff') format('woff');
 }
 
-body {
-  font-family: 'MyFont', sans-serif;
+body { 
+font-family: 'MyFont', sans-serif;
 }
-```
+````
 
-## Блочная модель (Box Model)
+## Блокова модель (Box Model)
 
-### Размеры элементов
+### Розміри елементів
 
 ```css
-div {
-  width: 300px; /* Ширина */
-  height: 200px; /* Высота */
-  max-width: 100%; /* Максимальная ширина */
-  min-height: 100px; /* Минимальная высота */
-  box-sizing: border-box; /* Включает padding и border в общий размер */
+div { 
+width: 300px; /* Ширина */ 
+height: 200px; /* Висота */ 
+max-width: 100%; /* Максимальна ширина */ 
+min-height: 100px; /* Мінімальна висота */ 
+box-sizing: border-box; /* Включає padding та border у загальний розмір */
 }
-```
+````
 
-### Отступы и границы
+### Відступи та кордони
 
 ```css
-div {
-  margin: 10px; /* Внешний отступ со всех сторон */
-  margin-top: 20px; /* Верхний отступ */
-  margin: 10px 20px 30px 40px; /* top, right, bottom, left */
-  
-  padding: 10px; /* Внутренний отступ со всех сторон */
-  padding: 10px 20px; /* top/bottom, left/right */
-  
-  border: 1px solid black; /* Граница со всех сторон */
-  border-width: 1px 2px 3px 4px; /* top, right, bottom, left */
-  border-style: solid dashed dotted double;
-  border-color: red green blue yellow;
-  border-radius: 10px; /* Скругление углов */
-  
-  outline: 1px solid red; /* Контур (не влияет на размеры) */
+div { 
+margin: 10px; /* Зовнішній відступ з усіх боків */ 
+margin-top: 20px; /* Верхній відступ */ 
+margin: 10px 20px 30px 40px; /* top, right, bottom, left */ 
+
+padding: 10px; /* Внутрішній відступ з усіх боків */ 
+padding: 10px 20px; /* top/bottom, left/right */ 
+
+border: 1px solid black; /* Кордон з усіх боків */ 
+border-width: 1px 2px 3px 4px; /* top, right, bottom, left */ 
+border-style: solid dashed dotted double; 
+border-color: green blue yellow; 
+border-radius: 10px; /* Скруглення кутів */ 
+
+outline: 1px solid red; /* Контур (не впливає на розміри) */
 }
-```
+````
 
-## Позиционирование
+## Позиціювання
 
-### Типы позиционирования
+### Типи позиціонування
 
 ```css
-div {
-  position: static; /* По умолчанию */
-  position: relative; /* Относительное позиционирование */
-  position: absolute; /* Абсолютное позиционирование */
-  position: fixed; /* Фиксированное позиционирование */
-  position: sticky; /* Липкое позиционирование */
-  
-  top: 10px;
-  right: 20px;
-  bottom: 30px;
-  left: 40px;
-  
-  z-index: 10; /* Порядок наложения элементов */
-}
-```
+div { 
+position: static; /* За замовчуванням */ 
+position: relative; /* Відносне позиціонування */ 
+position: absolute; /* Абсолютне позиціонування */ 
+position: fixed; /* Фіксоване позиціонування */ 
+position: sticky; /* Липке позиціонування */ 
 
-### Плавающие элементы
+top: 10px; 
+right: 20px; 
+bottom: 30px; 
+left: 40px; 
+
+z-index: 10; /* Порядок накладання елементів */
+}
+````
+
+### Плаваючі елементи
 
 ```css
-img {
-  float: left; /* Обтекание слева */
-  float: right; /* Обтекание справа */
-  float: none; /* Отключение обтекания */
+img { 
+float: left; /* Обтікання зліва */ 
+float: right; /* Обтікання праворуч */ 
+float: none; /* Відключення обтікання */
 }
 
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both; /* Очистка обтекания */
+.clearfix::after { 
+content: ""; 
+display: table; 
+clear: both; /* Очищення обтікання */
 }
-```
+````
 
 ## Flexbox
 
 ```css
-.container {
-  display: flex; /* Включение flexbox */
-  flex-direction: row; /* row, row-reverse, column, column-reverse */
-  flex-wrap: wrap; /* nowrap, wrap, wrap-reverse */
-  flex-flow: row wrap; /* Сокращение для direction и wrap */
-  
-  justify-content: space-between; /* Выравнивание по главной оси */
-  /* flex-start, flex-end, center, space-around, space-evenly */
-  
-  align-items: center; /* Выравнивание по поперечной оси */
-  /* flex-start, flex-end, center, stretch, baseline */
-  
-  align-content: space-between; /* Выравнивание строк при wrap */
-  /* flex-start, flex-end, center, space-between, space-around, stretch */
-  
-  gap: 10px; /* Отступы между flex-элементами */
+.container { 
+display: flex; /* Увімкнення flexbox */ 
+flex-direction: row; /* row, row-reverse, column, column-reverse */ 
+flex-wrap: wrap; /* nowrap, wrap, wrap-reverse */ 
+flex-flow: row wrap; /* Скорочення для direction та wrap */ 
+
+justify-content: space-between; /* Вирівнювання по головній осі */ 
+/* flex-start, flex-end, center, space-around, space-evenly */ 
+
+align-items: center; /* Вирівнювання по поперечній осі */ 
+/* flex-start, flex-end, center, stretch, baseline */ 
+
+align-content: space-between; /* Вирівнювання рядків при wrap */ 
+/* flex-start, flex-end, center, space-between, space-around, stretch */ 
+
+gap: 10px; /* Відступи між flex-елементами */
 }
 
-.item {
-  flex-grow: 1; /* Фактор роста */
-  flex-shrink: 0; /* Фактор сжатия */
-  flex-basis: 200px; /* Базовый размер */
-  
-  flex: 1 0 200px; /* Сокращение для grow, shrink, basis */
-  
-  align-self: flex-end; /* Индивидуальное выравнивание */
-  /* auto, flex-start, flex-end, center, baseline, stretch */
-  
-  order: 2; /* Порядок элемента */
+.item { 
+flex-grow: 1; /* Фактор зростання */ 
+flex-shrink: 0; /* Фактор стиснення */ 
+flex-basis: 200px; /* Базовий розмір */ 
+
+flex: 10 200px; /* Скорочення для grow, shrink, basis */ 
+
+align-self: flex-end; /* Індивідуальне вирівнювання */ 
+/* auto, flex-start, flex-end, center, baseline, stretch */ 
+
+order: 2; /* Порядок елемента */
 }
-```
+````
 
 ## CSS Grid
 
 ```css
-.container {
-  display: grid; /* Включение grid */
-  
-  grid-template-columns: 1fr 2fr 1fr; /* Определение колонок */
-  grid-template-rows: 100px auto 100px; /* Определение строк */
-  
-  grid-template-areas: 
-    "header header header"
-    "sidebar content content"
-    "footer footer footer"; /* Именованные области */
-  
-  gap: 10px; /* Отступы между ячейками */
-  column-gap: 15px; /* Отступы между колонками */
-  row-gap: 20px; /* Отступы между строками */
-  
-  justify-items: center; /* Выравнивание элементов по горизонтали */
-  align-items: center; /* Выравнивание элементов по вертикали */
-  
-  justify-content: space-between; /* Выравнивание сетки по горизонтали */
-  align-content: space-between; /* Выравнивание сетки по вертикали */
+.container { 
+display: grid; /* Увімкнення grid */ 
+
+grid-template-columns: 1fr 2fr 1fr; /* Визначення колонок */ 
+grid-template-rows: 100px auto 100px; /* Визначення рядків */ 
+
+grid-template-areas: 
+"header header header" 
+"sidebar content content" 
+"footer footer footer"; /* Іменовані області */ 
+
+gap: 10px; /* Відступи між осередками */ 
+column-gap: 15px; /* Відступи між колонками */ 
+row-gap: 20px; /* Відступи між рядками */ 
+
+justify-items: center; /* Вирівнювання елементів по горизонталі */ 
+align-items: center; /* Вирівнювання елементів по вертикалі */ 
+
+justify-content: space-between; /* Вирівнювання сітки по горизонталі */ 
+align-content: space-between; /* Вирівнювання сітки по вертикалі */
 }
 
-.item {
-  grid-column: 1 / 3; /* Начальная / конечная колонка */
-  grid-row: 2 / 4; /* Начальная / конечная строка */
-  
-  /* Или с использованием span */
-  grid-column: 1 / span 2; /* Занимает 2 колонки */
-  
-  grid-area: header; /* Размещение в именованной области */
-  
-  justify-self: center; /* Индивидуальное выравнивание по горизонтали */
-  align-self: center; /* Индивидуальное выравнивание по вертикали */
+.item { 
+grid-column: 1/3; /* Початкова / кінцева колонка */ 
+grid-row: 2/4; /* Початковий / кінцевий рядок */ 
+
+/* Або з використанням span */ 
+grid-column: 1/span 2; /* Займає 2 колонки */ 
+
+grid-area: header; /* Розміщення в іменованій області */ 
+
+justify-self: center; /* Індивідуальне вирівнювання по горизонталі */ 
+align-self: center; /* Індивідуальне вирівнювання по вертикалі */
 }
-```
+````
 
-## Трансформации и переходы
+## Трансформації та переходи
 
-### Трансформации
+### Трансформації
 
 ```css
-.element {
-  transform: translateX(20px); /* Сдвиг по X */
-  transform: translateY(20px); /* Сдвиг по Y */
-  transform: translate(20px, 20px); /* Сдвиг по X и Y */
-  
-  transform: scale(1.5); /* Масштабирование */
-  transform: scaleX(1.5); /* Масштабирование по X */
-  transform: scaleY(1.5); /* Масштабирование по Y */
-  
-  transform: rotate(45deg); /* Поворот */
-  
-  transform: skewX(10deg); /* Наклон по X */
-  transform: skewY(10deg); /* Наклон по Y */
-  
-  /* Комбинирование трансформаций */
-  transform: translate(20px, 20px) rotate(45deg) scale(1.5);
-  
-  transform-origin: center; /* Точка трансформации */
-}
-```
+.element { 
+transform: translateX(20px); /* Зсув по X */ 
+transform: translateY(20px); /* Зсув по Y */ 
+transform: translate(20px, 20px); /* Зсув по X та Y */ 
 
-### Переходы
+transform: scale(1.5); /* Масштабування */ 
+transform: scaleX(1.5); /* Масштабування за X */ 
+transform: scaleY(1.5); /* Масштабування за Y */ 
+
+transform: rotate(45deg); /* Поворот */ 
+
+transform: skewX(10deg); /* Нахил по X */ 
+transform: skewY(10deg); /* Нахил Y */ 
+
+/* Комбінування трансформацій */ 
+transform: translate(20px, 20px) rotate(45deg) scale(1.5); 
+
+transform-origin: center; /* Точка трансформації */
+}
+````
+
+### Переходи
 
 ```css
-.element {
-  transition-property: all; /* Свойства для перехода */
-  transition-duration: 0.5s; /* Длительность */
-  transition-timing-function: ease-in-out; /* Функция времени */
-  transition-delay: 0.2s; /* Задержка */
-  
-  /* Сокращенная запись */
-  transition: all 0.5s ease-in-out 0.2s;
-  
-  /* Несколько переходов */
-  transition: 
-    color 0.3s ease,
-    background-color 0.5s ease-in-out;
-}
-```
+.element { 
+transition-property: all; /* Властивості для переходу */ 
+transition-duration: 0.5s; /* Тривалість */ 
+transition-timing-function: ease-in-out; /* Функція часу */ 
+transition-delay: 0.2s; /* Затримка */ 
 
-## Анимации
+/* Скорочений запис */ 
+transition: all 0.5s ease-in-out 0.2s; 
+
+/* Кілька переходів */ 
+transition: 
+color 0.3s ease, 
+background-color 0.5s ease-in-out;
+}
+````
+
+## Анімації
 
 ```css
-/* Определение анимации */
-@keyframes slide-in {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+/* Визначення анімації */
+@keyframes slide-in { 
+0% { 
+transform: translateX(-100%); 
+opacity: 0; 
+} 
+100% { 
+transform: translateX(0); 
+opacity: 1; 
+}
 }
 
-.element {
-  animation-name: slide-in; /* Имя анимации */
-  animation-duration: 1s; /* Длительность */
-  animation-timing-function: ease-out; /* Функция времени */
-  animation-delay: 0.5s; /* Задержка */
-  animation-iteration-count: 3; /* Количество повторений (infinite для бесконечного) */
-  animation-direction: alternate; /* Направление */
-  animation-fill-mode: forwards; /* Состояние до/после анимации */
-  animation-play-state: running; /* Состояние проигрывания */
-  
-  /* Сокращенная запись */
-  animation: slide-in 1s ease-out 0.5s 3 alternate forwards;
-}
-```
+.element { 
+animation-name: slide-in; /* Ім'я анімації */ 
+animation-duration: 1s; /* Тривалість */ 
+animation-timing-function: ease-out; /* Функція часу */ 
+animation-delay: 0.5s; /* Затримка */ 
+animation-iteration-count: 3; /* Кількість повторень (infinite для нескінченного) */ 
+animation-direction: alternate; /* Напрямок */ 
+animation-fill-mode: forwards; /* Стан до/після анімації */ 
+animation-play-state: running; /* Стан програвання */ 
 
-## Медиа-запросы (адаптивный дизайн)
+/* Скорочений запис */ 
+animation: slide-in 1s ease-out 0.5s 3 alternate forwards;
+}
+````
+
+## Медіа-запити (адаптивний дизайн)
 
 ```css
-/* Медиа-запрос для экранов шириной до 768px */
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-  
-  .container {
-    width: 100%;
-  }
+/* Медіа-запит для екранів шириною до 768px */
+@media screen and (max-width: 768px) { 
+body { 
+font-size: 14px; 
+} 
+
+.container { 
+width: 100%; 
+}
 }
 
-/* Медиа-запрос для экранов шириной от 768px до 1024px */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .container {
-    width: 90%;
-  }
+/* Медіа-запит для екранів шириною від 768px до 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) { 
+.container { 
+width: 90%; 
+}
 }
 
-/* Медиа-запрос для печати */
-@media print {
-  .no-print {
-    display: none;
-  }
-  
-  body {
-    font-size: 12pt;
-  }
+/* Медіа-запит для друку */
+@media print { 
+.no-print { 
+display: none; 
+} 
+
+body { 
+font-size: 12pt; 
+}
 }
 
-/* Медиа-запрос для ориентации устройства */
-@media (orientation: portrait) {
-  /* Стили для портретной ориентации */
+/* Медіа-запит для орієнтації пристрою */
+@media (orientation: portrait) { 
+/* Стилі для портретної орієнтації */
 }
 
-@media (orientation: landscape) {
-  /* Стили для альбомной ориентации */
+@media (orientation: landscape) { 
+/* Стилі для альбомної орієнтації */
 }
-```
+````
 
-## Переменные CSS (Custom Properties)
+## Змінні CSS (Custom Properties)
 
 ```css
-:root {
-  --main-color: #3498db;
-  --secondary-color: #2ecc71;
-  --font-size: 16px;
-  --spacing: 10px;
+:root { 
+--main-color: #3498db; 
+--secondary-color: #2ecc71; 
+--font-size: 16px; 
+--spacing: 10px;
 }
 
-.element {
-  color: var(--main-color);
-  margin: var(--spacing);
-  font-size: var(--font-size);
+.element { 
+color: var(-main-color); 
+margin: var(--spacing); 
+font-size: var(--font-size);
 }
 
-/* Переопределение переменных в медиа-запросах */
-@media (max-width: 768px) {
-  :root {
-    --font-size: 14px;
-    --spacing: 5px;
-  }
+/* Перевизначення змінних у медіа-запитах */
+@media (max-width: 768px) { 
+:root { 
+--font-size: 14px; 
+--spacing: 5px; 
+}
 }
 
-/* Локальные переменные */
-.special-section {
-  --main-color: #e74c3c;
-  color: var(--main-color); /* Будет использовать локальное значение */
+/* Локальні змінні */
+.special-section { 
+--main-color: #e74c3c; 
+color: var(-main-color); /* Використовуватиме локальне значення */
 }
-```
+````
 
-## Специальные эффекты
+## Спеціальні ефекти
 
-### Тени
+### Тіні
 
 ```css
-.box {
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* x, y, размытие, цвет */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), 
-              0 0 30px rgba(0, 0, 0, 0.1); /* Несколько теней */
-  
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* x, y, размытие, цвет */
-}
-```
+.box { 
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* x, y, розмиття, колір */ 
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), 
+0 0 30px rgba(0, 0, 0, 0.1); /* Кілька тіней */ 
 
-### Градиенты
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* x, y, розмиття, колір */
+}
+````
+
+### Градієнти
 
 ```css
-.element {
-  /* Линейный градиент */
-  background: linear-gradient(to right, red, blue);
-  background: linear-gradient(45deg, red, blue);
-  background: linear-gradient(to bottom right, red, yellow, blue);
-  
-  /* Радиальный градиент */
-  background: radial-gradient(circle, red, blue);
-  background: radial-gradient(ellipse at top left, red, yellow, blue);
-  
-  /* Конический градиент */
-  background: conic-gradient(red, yellow, blue, red);
-  background: conic-gradient(from 45deg, red, blue);
-}
-```
+.element { 
+/* Лінійний градієнт */ 
+background: linear-gradient(to right, red, blue); 
+background: linear-gradient(45deg, red, blue); 
+background: linear-gradient(to bottom right, red, yellow, blue); 
 
-### Фильтры
+/* Радіальний градієнт */ 
+background: radial-gradient( circle, red, blue); 
+background: radial-gradient(ellipse at top left, red, yellow, blue); 
+
+/* Конічний градієнт */ 
+background: conic-gradient(red, yellow, blue, red); 
+background: conic-gradient (від 45deg, red, blue);
+}
+````
+
+### Фільтри
 
 ```css
-.image {
-  filter: blur(5px); /* Размытие */
-  filter: brightness(150%); /* Яркость */
-  filter: contrast(200%); /* Контрастность */
-  filter: grayscale(100%); /* Оттенки серого */
-  filter: hue-rotate(90deg); /* Поворот оттенка */
-  filter: invert(100%); /* Инверсия */
-  filter: opacity(50%); /* Прозрачность */
-  filter: saturate(200%); /* Насыщенность */
-  filter: sepia(100%); /* Сепия */
-  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)); /* Тень */
-  
-  /* Комбинирование фильтров */
-  filter: contrast(150%) brightness(120%) sepia(30%);
+.image { 
+filter: blur(5px); /* Розмиття */ 
+filter: brightness(150%); /* Яскравість */ 
+filter: contrast(200%); /* Контрастність */ 
+filter: grayscale(100%); /* Відтінки сірого */ 
+filter: hue-rotate(90deg); /* Поворот відтінку */ 
+filter: invert(100%); /* Інверсія */ 
+filter: opacity(50%); /* Прозорість */ 
+filter: saturate(200%); /* Насиченість */ 
+filter: sepia(100%); /* Сепія */ 
+filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)); /* Тінь */ 
+
+/* Комбінування фільтрів */ 
+filter: contrast(150%) brightness(120%) sepia(30%);
 }
-```
+````
 
-## Практические приемы
+## Практичні прийоми
 
-### Центрирование элементов
+### Центрування елементів
 
 ```css
-/* Центрирование блока по горизонтали */
-.center-block {
-  margin: 0 auto;
-  width: 80%; /* Должна быть задана ширина */
+/* Центрування блоку по горизонталі */
+.center-block { 
+margin: 0 auto; 
+width: 80%; /* Повинна бути задана ширина */
 }
 
-/* Центрирование с помощью Flexbox */
-.center-flex {
-  display: flex;
-  justify-content: center; /* По горизонтали */
-  align-items: center; /* По вертикали */
+/* Центрування за допомогою Flexbox */
+.center-flex { 
+display: flex; 
+justify-content: center; /* По горизонталі */ 
+align-items: center; /* По вертикалі */
 }
 
-/* Центрирование с помощью Grid */
-.center-grid {
-  display: grid;
-  place-items: center;
+/* Центрування за допомогою Grid */
+.center-grid { 
+display: grid; 
+place-items: center;
 }
 
-/* Абсолютное центрирование */
-.center-absolute {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* Абсолютне центрування */
+.center-absolute { 
+position: absolute; 
+top: 50%; 
+left: 50%; 
+transform: translate(-50%, -50%);
 }
-```
+````
 
-### Скрытие элементов
+### Приховування елементів
 
 ```css
-/* Полное скрытие (элемент не занимает место) */
-.hidden {
-  display: none;
+/* Повне приховування (елемент не займає місце) */
+.hidden { 
+display: none;
 }
 
-/* Визуальное скрытие (элемент занимает место) */
-.invisible {
-  visibility: hidden;
+/* Візуальне приховування (елемент займає місце) */
+.invisible { 
+visibility: hidden;
 }
 
-/* Скрытие для скринридеров */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+/* Приховування для скринридерів */
+.visually-hidden { 
+position: absolute; 
+width: 1px; 
+height: 1px; 
+margin: -1px; 
+padding: 0; 
+overflow: hidden; 
+clip: rect(0, 0, 0, 0); 
+border: 0;
 }
 
-/* Прозрачность */
-.transparent {
-  opacity: 0;
+/* Прозорість */
+.transparent { 
+opacity: 0;
 }
-```
+````
 
-### Обрезка текста
+### Обрізка тексту
 
 ```css
-/* Обрезка в одну строку с многоточием */
-.truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+/* Обрізка в один рядок з трьома крапками */
+.truncate { 
+white-space: nowrap; 
+overflow: hidden; 
+text-overflow: ellipsis;
 }
 
-/* Обрезка многострочного текста */
-.multiline-truncate {
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Количество строк */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+/* Обрізання багаторядкового тексту */
+.multiline-truncate { 
+display: -webkit-box; 
+-webkit-line-clamp: 3; /* Кількість рядків */ 
+-webkit-box-orient: vertical; 
+overflow: hidden;
 }
-```
+````
 
-## Организация кода CSS
+## Організація коду CSS
 
-### Методологии именования классов
+### Методології іменування класів
 
 **BEM (Block, Element, Modifier)**
 ```css
 .block {}
 .block__element {}
-.block--modifier {}
+.block --modifier {}
 .block__element--modifier {}
 
-/* Пример */
+/* Приклад */
 .card {}
 .card__title {}
 .card__image {}
 .card--featured {}
-```
+````
 
 **SMACSS (Scalable and Modular Architecture for CSS)**
 ```css
@@ -678,41 +678,41 @@ body, h1, p {}
 
 /* Theme */
 .theme-dark .btn {}
-```
+````
 
-### CSS-переменные для темизации
+### CSS-змінні для темизації
 
 ```css
-:root {
-  /* Светлая тема (по умолчанию) */
-  --bg-color: #ffffff;
-  --text-color: #333333;
-  --accent-color: #3498db;
+:root { 
+/* Світла тема (за замовчуванням) */ 
+--bg-color: #ffffff; 
+--text-color: #333333; 
+--accent-color: #3498db;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Темная тема */
-    --bg-color: #222222;
-    --text-color: #f5f5f5;
-    --accent-color: #5dade2;
-  }
+@media (prefers-color-scheme: dark) { 
+:root { 
+/* Темна тема */ 
+--bg-color: #222222; 
+--text-color: #f5f5f5; 
+--accent-color: #5dade2; 
+}
 }
 
-/* Применение переменных */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+/* Застосування змінних */
+body { 
+background-color: var(-bg-color); 
+color: var(--text-color);
 }
 
-.button {
-  background-color: var(--accent-color);
+.button { 
+background-color: var(--accent-color);
 }
 
-/* Ручное переключение темы */
-body.dark-theme {
-  --bg-color: #222222;
-  --text-color: #f5f5f5;
-  --accent-color: #5dade2;
+/* Ручне перемикання теми */
+body.dark-theme { 
+--bg-color: #222222; 
+--text-color: #f5f5f5; 
+--accent-color: #5dade2;
 }
-```
+````
